@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+        <TargetFrameworks>net6.0;net7.0;netcoreapp3.1</TargetFrameworks>
+        <Title>ApiRequests.Amqp Dependency Injection</Title>
+        <Authors>Destry.Unimaster</Authors>
+        <Description>Dependency Injection for basic AMQP controllers to use in ASP.NET projects.</Description>
+        <Copyright>2023</Copyright>
+        <PackageLicenseUrl>MIT</PackageLicenseUrl>
+        <PackageIcon>api-interface.png</PackageIcon>
+        <RepositoryUrl>https://github.com/DES-Destry/ApiRequests.Amqp.Extensions.git</RepositoryUrl>
+        <RepositoryType>GitHub</RepositoryType>
+        <PackageTags>API Requests AMQP RabbitMQ DI Extensions ASP.NET</PackageTags>
+        <PackageReleaseNotes>- Update dependencies.</PackageReleaseNotes>
+        <AssemblyVersion>1.0.6.0</AssemblyVersion>
+        <FileVersion>1.0.6.0</FileVersion>
+        <Version>1.0.6</Version>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    </ItemGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <DocumentationFile>bin\Release\ApiRequests.Amqp.Extensions.xml</DocumentationFile>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="api-interface.png" Pack="true" PackagePath="" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
+<!--        There is projects for more detailed debugging. You must download the projects from Github-->
+<!--        <ProjectReference Include="..\ApiRequests.Amqp\ApiRequests.Amqp.csproj" />-->
+        <PackageReference Include="ApiRequests.Amqp" Version="1.2.1" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(Configuration)' == 'Release' ">
+        <PackageReference Include="ApiRequests.Amqp" Version="1.2.1" />
+    </ItemGroup>
+
+</Project>
